@@ -1,35 +1,38 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';  
 
-function Flat({src, viewsCount, starsCount, mainTitle, mainDate, mostLiked, wishListed}) {
-    const [isLiked, setIsLiked] = useState(mostLiked)
-    const [iswishlisted, setIswishlisted] = useState(wishListed)
+function Flat({ id, src, viewsCount, starsCount, mainTitle, mainDate, mostLiked, wishListed }) {
+    const [isLiked, setIsLiked] = useState(mostLiked);
+    const [isWishlisted, setIsWishlisted] = useState(wishListed);
+    const navigate = useNavigate();  
+
+    const handleClick = () => {
+        navigate(`/details`);  
+    };
 
     return (
-        <div className='flat-box'>
-
+        <div className='flat-box' onClick={handleClick}> 
             {isLiked && (
                 <div className='most-liked'>
                     <p>Most Liked</p>
                 </div>
             )}
 
-
-            <div onClick={()=> setIswishlisted(!iswishlisted)} className='pro-heart'>
-                {(iswishlisted ? <img src="./heartf.png" /> : <img src="./heart.png" /> )}
+            <div onClick={() => setIsWishlisted(!isWishlisted)} className='pro-heart'>
+                {isWishlisted ? <img src="./heartf.png" alt="wishlisted" /> : <img src="./heart.png" alt="not wishlisted" />}
             </div>
 
-
             <div className='top-box'>
-                <img src={src} />
+                <img src={src} alt="property" />
             </div>
             <div className='info-box'>
                 <div className="top-one">
                     <div className="views-box">
-                        <img src="./Show.png" />
+                        <img src="./Show.png" alt="views" />
                         <p className='views-count'>{viewsCount}</p>
                     </div>
                     <div className='star-box'>
-                        <img src="./Star.png" />
+                        <img src="./Star.png" alt="stars" />
                         <p className='star-count'>{starsCount}</p>
                     </div>
                 </div>
@@ -40,7 +43,7 @@ function Flat({src, viewsCount, starsCount, mainTitle, mainDate, mostLiked, wish
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
-export default Flat
+export default Flat;
