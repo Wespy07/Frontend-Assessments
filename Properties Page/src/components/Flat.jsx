@@ -10,6 +10,11 @@ function Flat({ id, src, viewsCount, starsCount, mainTitle, mainDate, mostLiked,
         navigate(`/details`);  
     };
 
+    const handleWishlistClick = (e) => {
+        e.stopPropagation(); 
+        setIsWishlisted(!isWishlisted);  
+    };
+
     return (
         <div className='flat-box' onClick={handleClick}> 
             {isLiked && (
@@ -18,7 +23,7 @@ function Flat({ id, src, viewsCount, starsCount, mainTitle, mainDate, mostLiked,
                 </div>
             )}
 
-            <div onClick={() => setIsWishlisted(!isWishlisted)} className='pro-heart'>
+            <div onClick={handleWishlistClick} className='pro-heart'>
                 {isWishlisted ? <img src="./heartf.png" alt="wishlisted" /> : <img src="./heart.png" alt="not wishlisted" />}
             </div>
 
