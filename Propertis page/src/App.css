@@ -1,0 +1,121 @@
+nav{
+    width: 80vw;
+    margin: auto;
+    padding-inline: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+}
+.nav-right{
+    display: flex;
+    gap: 7px;
+}
+
+.property-box{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    margin: auto;
+    padding: 50px;
+}
+.flat-box{
+    position: relative;
+    width: 300px;
+    overflow: hidden;
+}
+.most-liked{
+    top: 12px;
+    position: absolute;
+    background-color: white;
+    left: 12px;
+    border-radius: 22px;
+    padding: 1px 10px;
+}
+.pro-heart img{
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 32px;
+}
+.info-box{
+    padding: 0 7px;
+}
+.top-one{
+    display: flex;
+    justify-content: space-between;
+}
+.top-box img{ 
+    border-radius: 13px;
+    width: 100%;
+}
+.views-box, .star-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+.views-box img, .star-box img{
+    width: 20px;
+}
+.views-count, .title-date{
+    color: #888888;
+}
+.star-count{
+    color: #e57601;
+}
+.title h3{
+    font-weight: 600;
+}
+.footer{
+    width: 80vw;
+    margin: auto;
+    padding: 10px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    background-color: #f7f7f7;
+}
+.footer img{
+    width: 70px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.footer img:hover{
+    transform: scale(1.2);
+}
+
+@media (max-width: 1000px) {
+    .property-box{
+        width: 90vw;
+    } 
+    .footer{
+        gap: 50px;
+    }
+    .footer img{
+        width: 40px;
+    }
+}
+
+@media (max-width: 650px) {
+    nav .main-logo {
+        width: 100px;
+    }
+    nav img{
+        width: 10px;
+    }
+    nav p {
+        font-size: 10px;
+    }
+    .footer{
+        gap: 30px;
+    }
+    .footer img{
+        width: 40px;
+    }
+}
