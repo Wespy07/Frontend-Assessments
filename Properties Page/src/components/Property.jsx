@@ -1,15 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Flat from './Flat';
-import properties from '../data';
+import initialProperties from '../data';
 import Footer from './Footer';
+import moreProperties from '../moreData';
 
 function Property() {
+  const [properties, setProperties] = useState(initialProperties)
+
+  
+  const handleLoadMore = () => {
+    setProperties((prevProperties) => [...prevProperties, ...moreProperties]);
+  };
+
   return (
     <div className="property-box">
       {properties.map((property) => (
         <Flat
-          key={property.id}  
-          id={property.id}  
+          key={property.id}
+          id={property.id}
           src={property.src}
           viewsCount={property.viewsCount}
           starsCount={property.starsCount}
@@ -19,6 +27,10 @@ function Property() {
           wishListed={property.wishListed}
         />
       ))}
+
+      <div className='load-more'>
+        <button onClick={handleLoadMore}>Load More</button>
+      </div>
 
       <Footer />
     </div>

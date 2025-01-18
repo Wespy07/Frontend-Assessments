@@ -3,14 +3,9 @@ nav {
     margin: auto;
     padding-inline: 50px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     height: 50px;
-}
-
-.nav-right {
-    display: flex;
-    gap: 7px;
 }
 
 .property-box {
@@ -19,13 +14,14 @@ nav {
     gap: 40px;
     justify-content: center;
     align-items: center;
-    width: 80vw;
+    width: 60vw;
     margin: auto;
     padding: 50px;
     padding-bottom: 0;
 }
 
 .flat-box {
+    cursor: pointer;
     position: relative;
     width: 300px;
     overflow: hidden;
@@ -135,6 +131,23 @@ nav {
     width: 100%;
     border: none;
     outline: none;
+}
+.load-more{
+    text-align: center;
+    width: 100%;
+}
+.load-more button{
+    border: none;
+    outline: none;
+    padding: 7px 17px;
+    background-color: #e57601;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.load-more button:hover{
+    background-color: #c26400;
 }
 
 @media (max-width: 1000px) {

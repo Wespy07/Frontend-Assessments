@@ -1,15 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router'
 
 function Header() {
   return (
     <nav>
-      <p>10:10</p>
-      <img className='main-logo' src="./logo.png" />
-      <div className='nav-right'>
-        <img src="./cell.png" />
-        <img src="./wifi.png" />
-        <img src="./batt.png" />
-      </div>
+      <Link to="/">
+        <img className='main-logo' src="./logo.png" />
+      </Link>
     </nav>
   )
 }
